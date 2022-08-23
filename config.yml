@@ -1,6 +1,6 @@
 ---
-baseURL: https://geekdocs.de/
-title: Geekdocs
+baseURL: https://foo.bar
+title: config.yml title
 theme: hugo-geekdoc
 
 pygmentsUseClasses: true
@@ -11,7 +11,7 @@ pluralizeListTitles: false
 defaultContentLanguage: en
 
 disablePathToLower: true
-enableGitInfo: true
+enableGitInfo: false
 
 enableRobotsTXT: true
 
@@ -42,3 +42,4 @@ security:
   exec:
     allow:
       - "^asciidoctor$"
+
