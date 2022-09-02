@@ -4,9 +4,9 @@
   "description": "An NPM Hugo template for web applications that are policy compliant.",
   "main": "index.js",
   "scripts": {
-    "build": "npm run hugo:build",
+    "build": "citation-js -i resources/ardbib.bib > content/bibliography.json && npm run hugo:build",
     "clean": "npm run hugo:clean",
-    "serve": "npm run hugo:serve",
+    "serve": "citation-js -i resources/ardbib.bib > content/bibliography.json && npm run hugo:serve",
     "hugo:build": "hugo -d build",
     "hugo:serve": "hugo server -D",
     "hugo:clean": "rm -rf build resources public"
@@ -14,7 +14,8 @@
   "author": "J. Laura",
   "license": "CC0-1.0",
   "dependencies": {
-    "@uswds/uswds": "^3.1.0"
+    "@uswds/uswds": "^3.1.0",
+    "citation-js": "^0.6.4"
   },
   "devDependencies": {
     "@uswds/compile": "^1.0.0-beta.3",

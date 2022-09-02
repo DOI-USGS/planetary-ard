@@ -1,7 +1,10 @@
 ---
-baseURL: https://foo.bar
-title: config.yml title
-theme: hugo-geekdoc
+baseURL: https://stac.astrogeology.usgs.gov
+title: Astrogeology Analysis Ready Data
+theme: 
+  - hugo-cite
+  - hugo-geekdoc
+
 
 pygmentsUseClasses: true
 pygmentsCodeFences: true
