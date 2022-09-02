@@ -1,0 +1,24 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  GIT_SSL_NO_VERIFY: 1
+  GIT_SUBMODULE_STRATEGY: recursive
+
+build:
+  stage: build
+  image: registry.gitlab.com/pages/hugo:latest
+  script:
+    - hugo --minify --baseURL=https://stac.astrogeology.usgs.gov/docs/
+  artifacts:
+    paths:
+      - public
+
+deploy:
+  stage: deploy
+  image: usgsastro/aws-cli:latest
+  only: 
+    - main
+  script:
+    - aws s3 sync --delete public s3://asc-docs/arddocs
