@@ -1,6 +1,7 @@
 ---
 baseURL: https://stac.astrogeology.usgs.gov
 title: Astrogeology Analysis Ready Data
+canonifyURLs: true
 theme: 
   - hugo-cite
   - hugo-geekdoc
