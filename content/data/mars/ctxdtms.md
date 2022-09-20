@@ -25,7 +25,7 @@ In the second phase of the processing pipeline, the ASP is used to perform a pai
 Finally, ASP generated GeoTIFFs are converted to cloud optimized GeoTIFFs (COGs) using GDAL’s _gdal_translate_ application. 
 
 ### Available Assets
-Other assets available in the STAC browser instance:
+Assets available with these data are:
  - Orthorectified images: Described elsewhere on this site.   
  - Hillshade images: Shaded-relief images derived from the DTM.  
  - “IntersectionErr”: Raster image of the intersection error. 
