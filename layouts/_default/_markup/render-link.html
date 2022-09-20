@@ -1,0 +1,5 @@
+{{- if eq .Destination "@" -}}
+  <span id="{{ .PlainText | anchorize }}">{{ .Text | safeHTML }}</span>
+{{else}}
+   <a href="#{{ .PlainText | anchorize}}">{{.Text | safeHTML}}</a>
+{{end}}

@@ -1,7 +1,6 @@
 ---
 title: "QGIS Projections"
 date: 2021-12-15T06:18:10-07:00
-draft: true
 ---
 
 {{% notice warning %}}
