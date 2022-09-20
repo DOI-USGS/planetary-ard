@@ -1,7 +1,5 @@
 ---
 title: "Photogrammetrically Controlled MRO Context Camera (CTX)"
-date: 2021-08-28T05:44:09-07:00
-weight: 3
 geekdocHidden: true
 ---
 
