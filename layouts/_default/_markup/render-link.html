@@ -1,5 +1,1 @@
-{{- if eq .Destination "@" -}}
-  <span id="{{ .PlainText | anchorize }}">{{ .Text | safeHTML }}</span>
-{{else}}
-   <a href="#{{ .PlainText | anchorize}}">{{.Text | safeHTML}}</a>
-{{end}}
+<a href=“{{ .Destination | safeURL }}”{{ with .Title}} title=“{{ . }}”{{ end }}{{ if or (strings.HasPrefix .Destination “http”) (strings.HasPrefix .Destination “https”) }} target=“_blank”{{ end }} >{{ .Text | safeHTML }}</a>
