@@ -5,14 +5,14 @@ draft: false
 weight: 21
 ---
 
-This tutorial focuses on searching for and downloading Analysis Ready Data (ARD) from a dynamic Spatio-Temporal Asset Catalog (STAC) using the python programming language. At the end of this tutorial, you will have installed the [pystac-client](https://pystac-client.readthedocs.io/en/docs/index.html) library, searched for Lunar data, and downloaded data locally for use in whatever analysis environment you prefer to use. Let's get right to it!
+This tutorial focuses on searching for and downloading Analysis Ready Data (ARD) from a dynamic Spatio-Temporal Asset Catalog (STAC) using the python programming language. At the end of this tutorial, you will have installed the [pystac-client](https://pystac-client.readthedocs.io/en/stable/) library, searched for Lunar data, and downloaded data locally for use in whatever analysis environment you prefer to use. Let's get right to it!
 
 {{% notice note %}}
 If you completed the similarly named [Discovering and Downloading Data via the Command Line]({{< ref "/tutorials/cli.md" >}}) you have already installed *conda* and *pystac*. You can simply activate the conda environment (*conda activate stac-client* assuming you used *stac-client* as the environment name in the other tutorial) and skip ahead to section 5!
 {{% /notice %}}
 
 ## Installing pystac-client
-[pystac-client](https://pystac-client.readthedocs.io/en/docs/index.html) is a python library and command line tool for discovering and downloading satellite data. In this tutorial, we will use the python module. First, we need to get the tool installed. Since this is a python tool, we will use the [conda](https://docs.conda.io/en/latest/) package manager to perform the installation. Conda is a cross platform package manager, so this tutorial should work on all operating systems.
+[pystac-client](https://pystac-client.readthedocs.io/en/stable/) is a python library and command line tool for discovering and downloading satellite data. In this tutorial, we will use the python module. First, we need to get the tool installed. Since this is a python tool, we will use the [conda](https://docs.conda.io/en/latest/) package manager to perform the installation. Conda is a cross platform package manager, so this tutorial should work on all operating systems.
 
 If you do not already have conda installed, start with the next section. If you do have conda installed, feel free to skip ahead to section 2 where we create a conda environment and install *stac-client*.
 

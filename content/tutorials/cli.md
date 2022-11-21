@@ -5,10 +5,10 @@ draft: false
 weight: 20
 ---
 
-This tutorial focuses on searching for and downloading Analysis Ready Data (ARD) from a dynamic Spatio-Temporal Asset Catalog (STAC) using the command line. At the end of this tutorial, you will have installed the [stac-client](https://pystac-client.readthedocs.io/en/docs/index.html) command line tool, searched for Lunar data, and downloaded data locally for use in whatever analysis environment you prefer to use. Let's get right to it!
+This tutorial focuses on searching for and downloading Analysis Ready Data (ARD) from a dynamic Spatio-Temporal Asset Catalog (STAC) using the command line. At the end of this tutorial, you will have installed the [stac-client](https://pystac-client.readthedocs.io/en/stable/) command line tool, searched for Lunar data, and downloaded data locally for use in whatever analysis environment you prefer to use. Let's get right to it!
 
 ## Installing stac-client
-[stac-client](https://pystac-client.readthedocs.io/en/docs/index.html) is a python library and command line tool for discovering and downloading satellite data. In this tutorial, only the command line tool will be used. First, we need to get the tool installed. Since this is a python tool, we will use the [conda](https://docs.conda.io/en/latest/) package manager to perform the installation. Conda is a cross platform package manager, so this tutorial should work on all operating systems.
+[stac-client](https://pystac-client.readthedocs.io/en/stable/) is a python library and command line tool for discovering and downloading satellite data. In this tutorial, only the command line tool will be used. First, we need to get the tool installed. Since this is a python tool, we will use the [conda](https://docs.conda.io/en/latest/) package manager to perform the installation. Conda is a cross platform package manager, so this tutorial should work on all operating systems.
 
 If you do not already have conda installed, start with the next section. If you do have conda installed, feel free to skip ahead to section 2 where we create a conda environment and install *stac-client*.
 
