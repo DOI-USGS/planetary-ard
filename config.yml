@@ -1,5 +1,5 @@
 ---
-baseURL: https://stac.astrogeology.usgs.gov
+baseURL: https://stac.astrogeology.usgs.gov/docs
 title: Astrogeology Analysis Ready Data
 canonifyURLs: true
 theme: 
