@@ -1,0 +1,46 @@
+[
+    {
+      "name": "Analysis Ready Data Documentation",
+      "organization": "U.S. Geological Survey",
+      "description": "Git repository containing the Analysis Ready Data (ARD) website code and content.",
+      "version": "main",
+      "status": "Development",
+      "permissions": {
+        "usageType": "openSource",
+        "licenses": [
+          {
+            "name": "Public Domain, CC0-1.0",
+            "URL": "https://code.usgs.gov/astrogeology/planetary-ard/-/raw/main/LICENSE.md"
+          }
+        ]
+      },
+  
+      "homepageURL": "https://code.usgs.gov/astrogeology/planetary-ard/",
+      "downloadURL": "https://code.usgs.gov/astrogeology/planetary-ard/-/archive/main/planetary-ard-1.0.0.zip",
+      "disclaimerURL": "https://code.usgs.gov/astrogeology/planetary-ard/-/raw/main/DISCLAIMER.md",
+      "repositoryURL": "https://code.usgs.gov/astrogeology/planetary-ard/.git",
+      "vcs": "git",
+  
+      "laborHours": 120,
+  
+      "tags": [
+        "Planetary",
+        "Spatial Data Infrastructure",
+        "Analysis Ready Data"
+      ],
+  
+      "languages": [
+        "Go"
+      ],
+  
+      "contact": {
+        "name": "Jason Laura",
+        "email": "jlaura@usgs.gov"
+      },
+  
+      "date": {
+        "metadataLastUpdated": "2023-04-16"
+      }
+    }
+  ]
+  
