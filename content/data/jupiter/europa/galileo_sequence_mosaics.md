@@ -38,5 +38,24 @@ The user should also be aware that no attempt was made to make the mosaics spati
 ### Related Data
 Traditional, global mosaics are available [from the USGS](https://astrogeology.usgs.gov/search/map/Europa/Voyager-Galileo/Europa_Voyager_GalileoSSI_global_mosaic_500m) and [Dr. Paul Schenk](https://repository.hou.usra.edu/handle/20.500.11753/1412). 
 
+### Discuss the Data
+<meta property="og:title">
+<script src="https://giscus.app/client.js"
+        data-repo="DOI-USGS/planetary-ard"
+        data-repo-id="R_kgDOJXSw8g"
+        data-category="General"
+        data-category-id="DIC_kwDOJXSw8s4CVzn1"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
 ### References
 {{< bibliography cited>}}

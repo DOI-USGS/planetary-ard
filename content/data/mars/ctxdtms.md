@@ -77,5 +77,23 @@ Orthorectified images associated with each DTM are available.
  
 CTX data are often acquired simultaneously with higher-resolution observations from the High Resolution Imaging Science Experiment (HiRISE; {{< cite "McEwen:2007" >}} ) and near-infrared spectral images from the Compact Reconnaissance Imaging Spectrometer for Mars (CRISM; {{< cite "Murchie:2007" >}}). Such coordinated observations can be particularly useful because the viewing geometry, surface illumination, and atmospheric conditions are the same. HiRISE and CRISM data are available from the PDS but the standard products have not been orthorectified at the scale of the CTX DTMs and orthoimages; therefore, they will not align precisely if they are imported into GIS software and there will be some geometric distortion of non-orthorectified data. Orthorectified HiRISE images may not align perfectly either as they are aligned to a different DTM.  
 
+### Discuss the Data
+<meta property="og:title">
+<script src="https://giscus.app/client.js"
+        data-repo="DOI-USGS/planetary-ard"
+        data-repo-id="R_kgDOJXSw8g"
+        data-category="General"
+        data-category-id="DIC_kwDOJXSw8s4CVzn1"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
 ### References
 {{< bibliography cited>}}
