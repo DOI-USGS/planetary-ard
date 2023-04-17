@@ -258,3 +258,23 @@ The data are organized temporally. The STAC specification is spatio-temporal aft
 
 ### 7. Conclusion
 That's it! In this tutorial, we have have installed the *pystac-client* library into a conda environment and executed a simple spatial query in order to discover and downloaded STAC data from the USGS hosted analysis ready data (ARD) STAC catalog.
+
+### Questions or Comments?
+### Discuss the Data
+<meta property="og:title">
+<script src="https://giscus.app/client.js"
+        data-repo="DOI-USGS/planetary-ard"
+        data-repo-id="R_kgDOJXSw8g"
+        data-category="General"
+        data-category-id="DIC_kwDOJXSw8s4CVzn1"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
