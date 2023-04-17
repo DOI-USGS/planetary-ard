@@ -21,4 +21,22 @@ If you are wondering what sat-search is and what this example is all about, head
 
 Two options exist for finding body specific information. The first option is to know the computer name of the STAC collection that you wish to search. For this example, we actually want to search over two different (at the time of writing) STAC collections. Here is an example of such a query:
 
-``
+### Questions or Comments?
+### Discuss the Data
+<meta property="og:title">
+<script src="https://giscus.app/client.js"
+        data-repo="DOI-USGS/planetary-ard"
+        data-repo-id="R_kgDOJXSw8g"
+        data-category="General"
+        data-category-id="DIC_kwDOJXSw8s4CVzn1"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

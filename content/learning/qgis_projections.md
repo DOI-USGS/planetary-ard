@@ -24,3 +24,23 @@ Now name the projection Moon2000 and paste the above WKT projection string into 
 The QGIS installation on your computer now has a custom Moon2000 projection! The final step is to set the project to use the custom coordinate reference system (CRS). From the menu bar, select `Project->Properties`. In the left hand TOC ensure that `CRS` is the selected page and then filter and search for Moon2000. Just before hitting 'Ok', the Project Properties - CRS window should look like the screen capture below.
 
 ![Set project projection](/images/learning/qgis_projections/qgis_set_projection.png)
+
+### Questions or Comments?
+### Discuss the Data
+<meta property="og:title">
+<script src="https://giscus.app/client.js"
+        data-repo="DOI-USGS/planetary-ard"
+        data-repo-id="R_kgDOJXSw8g"
+        data-category="General"
+        data-category-id="DIC_kwDOJXSw8s4CVzn1"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

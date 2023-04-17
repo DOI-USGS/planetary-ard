@@ -179,3 +179,23 @@ We did a bit of work to subset the data based on an attribute in the GeoJSON (vi
 
 ### Conclusion
 In this example, you have queried the USGS STAC endpoint for lunar data in the area of the Apollo15 landing site. We have added that data to a QGIS project with the appropriate coordinate reference system (CRS). We have loaded vector (GeoJSON) data that is the response from the query and then parsed those results to stream observations into QGIS over a WMS basemap. Finally, after a bit of exploratory data analysis, we discovered that the view geometries are very divergent between observations and have subset the data into higher and lower incidence angles (off_nadir).
+
+### Questions or Comments?
+### Discuss the Data
+<meta property="og:title">
+<script src="https://giscus.app/client.js"
+        data-repo="DOI-USGS/planetary-ard"
+        data-repo-id="R_kgDOJXSw8g"
+        data-category="General"
+        data-category-id="DIC_kwDOJXSw8s4CVzn1"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
