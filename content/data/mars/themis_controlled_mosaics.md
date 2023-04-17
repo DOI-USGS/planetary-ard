@@ -79,5 +79,24 @@ As a global data set of intermediate spatial scale, the controlled THEMIS daytim
 ### Related Data
 Individual, 32-bit science ready images, that have been used to create these qualitative mosaics will be released in the future.
 
+### Discuss the Data
+<meta property="og:title">
+<script src="https://giscus.app/client.js"
+        data-repo="DOI-USGS/planetary-ard"
+        data-repo-id="R_kgDOJXSw8g"
+        data-category="General"
+        data-category-id="DIC_kwDOJXSw8s4CVzn1"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
 ### References
 {{< bibliography cited>}}
