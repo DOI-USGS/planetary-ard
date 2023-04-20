@@ -95,5 +95,6 @@ CTX data are often acquired simultaneously with higher-resolution observations f
         crossorigin="anonymous"
         async>
 </script>
+
 ### References
 {{< bibliography cited>}}
