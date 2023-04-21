@@ -28,9 +28,10 @@ Finally, ASP generated GeoTIFFs are converted to cloud optimized GeoTIFFs (COGs)
 Assets available with these data are:
  - Orthorectified images: Described elsewhere on this site.   
  - Hillshade images: Shaded-relief images derived from the DTM.  
- - “IntersectionErr”: Raster image of the intersection error. 
- - QA_metrics: Statistics for differences between the CTX and MOLA DTMs.   
- - Provenance information: Processing commands used to generate data and MOLA points used to control to ground. 
+ - “IntersectionErr”: Raster image of the intersection error. (See [the ASP documentation for more information](https://stereopipeline.readthedocs.io/en/latest/correlation.html#triangulation-error))
+ - Quality Assurance Metrics: Statistics for differences between the CTX and MOLA DTMs. (See [the `geodiff` documentation for more information](https://stereopipeline.readthedocs.io/en/latest/tools/geodiff.html))
+ - Provenance information: Processing commands used to generate data.
+ - MOLA points used to control to ground in CSV format. 
 
 ### Accuracy, Errors, and Issues
 What are the quantitative things to be aware of and watch for? 
