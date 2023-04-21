@@ -81,7 +81,7 @@ CTX data are often acquired simultaneously with higher-resolution observations f
 ### Cite these data
 These data are released under the [CC0-1.0 license](https://creativecommons.org/publicdomain/zero/1.0/), meaning you can copy, modify, and distribution these data without permissions. We ask that you cite these data if you make use of them. The citation to be used is:
 
-> Laura, J.,  Adoram-Kershner, L.A., Meyer, D.P., Wheeler, B.H., Bauck, K.H. and Fergason, R.L., 2023. Mars Reconnaissance Orbiter (MRO) Context Camera (CTX) orthoimage generated using Ames stereo pipeline derived digital terrain models. https://doi.org/10.5066/P9JKVWR3
+> Laura, J.R.,  Adoram-Kershner, L.A., Meyer, D.P., Wheeler, B.H., Bauck, K.H. and Fergason, R.L., 2023. Mars Reconnaissance Orbiter (MRO) Context Camera (CTX) orthoimage generated using Ames stereo pipeline derived digital terrain models. https://doi.org/10.5066/P9JKVWR3
 
 ### Discuss the Data
 <meta property="og:title">
