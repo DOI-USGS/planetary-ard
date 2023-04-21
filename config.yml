@@ -15,7 +15,7 @@ pluralizeListTitles: false
 defaultContentLanguage: en
 
 disablePathToLower: true
-enableGitInfo: false
+enableGitInfo: true
 
 enableRobotsTXT: true
 
@@ -47,3 +47,6 @@ security:
     allow:
       - "^asciidoctor$"
 
+params:
+  geekdocRepo: "https://github.com/DOI-USGS/planetary-ard"
+  geekdocEditPath: "/tree/main/"
