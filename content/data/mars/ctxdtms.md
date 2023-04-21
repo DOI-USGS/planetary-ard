@@ -6,6 +6,12 @@ draft: false
 bibFile: "content/bibliography.json"
 ---
 
+### Access the Data
+These data can be accessed in three ways:
+- [Via a search API](https://stac.astrogeology.usgs.gov/api/collections/mro_ctx_controlled_usgs_dtms)
+- [Via a data browser](https://stac.astrogeology.usgs.gov/browser-dev/#/collections/mro_ctx_controlled_usgs_dtms?.language=en)
+- [Via a web map](https://stac.astrogeology.usgs.gov/geostac/)
+
 ### Overview
 The Mars Reconnaissance Orbiter (MRO) Context Camera (CTX; {{< cite "Malin:2007" >}}) began operations in 2006. It is a “pushbroom” imager that acquires images one line at a time as the spacecraft moves in its orbit around Mars, taking tens of seconds for a typical image. The CCD detector is 5,000 pixels wide and the images have a scale of approximately 6 m/pixel in the MRO mapping orbit. The MRO is in a near-polar orbit, so the orbit tracks are almost oriented south-north. Thus, individual CTX images are approximately 30 km wide (approximately east-west, except near the poles) and range in length from tens to hundreds of km. CTX images cover nearly 100% of Mars’ surface, often more than once to acquire stereoscopic coverage or to search for changes on the surface (stereo pairs). Stereo pairs are pairs of images acquired on different orbits and with different viewing angles, but with similar lighting, allowing the images to be matched automatically.  
   
