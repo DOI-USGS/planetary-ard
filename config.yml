@@ -6,7 +6,6 @@ theme:
   - hugo-cite
   - hugo-geekdoc
 
-
 pygmentsUseClasses: true
 pygmentsCodeFences: true
 timeout: 180000
@@ -46,6 +45,22 @@ security:
   exec:
     allow:
       - "^asciidoctor$"
+
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: true
+    noHl: false
+    style: monokai
+    tabWidth: 4
 
 params:
   geekdocRepo: "https://github.com/DOI-USGS/planetary-ard"

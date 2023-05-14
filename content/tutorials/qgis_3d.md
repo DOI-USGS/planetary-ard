@@ -7,7 +7,7 @@ weight: 30
 
  {{< figure src="/images/tutorials/qgis_3d/3d_visualization.png" alt="A PNG showing the final 3d visualization." title="The results of this tutorial, a 3D visualization in Valles Marineris composed of 83 Mars Reconnaissance Orbiter (MRO) Context Camera (CTX) Digital Terrain Models (DTMs)." >}}
 
-In this tutorial, we will:
+In this tutorial, will teach you how to:
 - searching for CTX DTMs using the [STAC API](https://stac.astrogeology.usgs.gov/api)
 - creating a [GDAL Virtual Format](https://gdal.org/drivers/raster/vrt.html) or VRT of a merge of the discovered DTMs
 - use the [QGIS hillshade tool](https://www.geodose.com/2020/02/how-to-make-beautiful-hillshading-map-qgis.html) to create a beautiful hillshade of the merged DTMs
@@ -18,9 +18,11 @@ This tutorial is linking together a number of other tutorials (linked above), so
 ## Prerequisites
 This tutorial requires that you have the following tools installed on your computer:
 
-- A [QGIS installation](https://www.qgis.org/en/site/forusers/download.html)
-- A [pystac-client installation](https://pystac-client.readthedocs.io/en/stable/); we suggest installing via conda
-- A [GDAL installation](https://opensourceoptions.com/blog/how-to-install-gdal-with-anaconda/)
+| Software Library or Application | Version Used |
+| ------------------------------- | ------------ |
+| [QGIS](https://www.qgis.org/en/site/forusers/download.html) | 3.30.1 |
+| [pystac-client](https://pystac-client.readthedocs.io/en/stable/) | 0.6.1 |
+| [GDAL](https://opensourceoptions.com/blog/how-to-install-gdal-with-anaconda/) | 3.6.3 |
 
 ## 1. Search for CTX DTMs
 For this tutorial, a region of interest (ROI) around Valles Marineris was selected. This is because quite a few DTMs are in that area and the vertical relief is high. The `pystac-client` library and a simple python script were used to find the 83 DTMs in the ROI.
@@ -54,7 +56,8 @@ from osgeo import gdal
 urls = ['/vsicurl/' + i for i in urls]
 
 # Build a VRT of the DTMs
-gdal.BuildVRT('mydtms.vrt', urls)
+ds = gdal.BuildVRT('mydtms.vrt', urls)
+ds.FlushCache()
 ```
 
 Line by line, this code:
@@ -62,6 +65,7 @@ Line by line, this code:
 1. Imports the `gdal` library for use.
 1. Prepends every URL in the previously created URL list with `/vsicurl`. The [vsicurl](https://gdal.org/user/virtual_file_systems.html#vsicurl-http-https-ftp-files-random-access) prefix to files tells GDAL to use a remote file accessor to read the files. This prefix allows streaming of the data from a network accessible source to a local computer for visualization and analysis.
 1. Build a local, on-disk VRT that be loaded into QGIS and visualized. 
+1. Flush the GDAL I/O cache, forcing the VRT to write to disk.
 
 By combining these together, a script can be created to generate a VRT for any ROI. Create a file named `find_dtms_and_make_vrt.py`. Paste the code below into the file.
 
@@ -82,7 +86,8 @@ from osgeo import gdal
 urls = ['/vsicurl/' + i for i in urls]
 
 # Build a VRT of the DTMs
-gdal.BuildVRT('mydtms.vrt', urls)
+ds = gdal.BuildVRT('mydtms.vrt', urls)
+ds.FlushCache()
 ```
 
 Then open a terminal and run `python find_dtms_and_make_vrt.py` in the diretory where you saved the script. If you are using conda environments, make sure you have one activated that has `gdal` and `pystac_client` in it. You will know that this step worked because the directory where you ran the script will now contain a file named `mydtms.vrt`.
@@ -114,23 +119,25 @@ Alternatively, simply drag the VRT from the directory it is saved in into the Ta
 
 The VRT that was created in the ROI contains 83 DTMs, but only a single layer is added to QGIS. Why is this? The VRT is a virtual mosaic of all of the DTMs and is effectively combined into a single raster layer. Therefore, it is important to note that this product does contain less data than one would have if they loaded in 83 individual DTMs. This produce also inevitably has small discontinuities in the $z$ dimension due to misalignments to MOLA[^1].
 
-### 3b. Create a Hillshade of the DTM
+### 3b. Load the MOLA Shaded Relief (Optional)
+By adding the VRT first, the project SRS is set properly. If you have worked through our QGIS WMS tutorial, add the MOLA shaded relief product. If you haven't, skip this step.
+### 3c. Create a Hillshade of the DTM
 To create the hillshade:
 1. Right click on the DTM in the Table of Contents (ToC) and select *Properties*. 
 2. In the properties dialog, select *Symbology*.
 3. In the *Render type* dropdown, select *Hillshade*.
-4. Set the *Z Factor* to 2.5. This applies a 2.5x vertical exaggeration to the DTM which results in a nice looking, albeit artificial final product. 
-5. **Optional**: Check the *Multidirectional* box (it makes a more even hillshade with less stark shadows).
-6. Change the *Resampling* (Zoomed In and Zoomed Out) to *Bilinear* or *Cubic*
+4. **Optional**: Check the *Multidirectional* box (it makes a more even hillshade with less stark shadows).
+5. Change the *Resampling* (Zoomed In and Zoomed Out) to *Bilinear* or *Cubic*
+6. Set the *Oversampling* (in the *Resampling* area of the dialog) to 1.0.
 
  {{< figure src="/images/tutorials/qgis_3d/create_hillshade.gif" alt="A GIF showing how to create a hillshade using the QGIS symbology dialog" title="A GIF demonstrating creating a pretty hillshade using the DTM VRT." >}}
 
  If you are interested in all of the other options in the dialog, make sure to checkout [this terrific tutorial](https://www.geodose.com/2020/02/how-to-make-beautiful-hillshading-map-qgis.html).
 
-### 3c. Create a Colorized DEM Layer
+### 3d. Create a Colorized DEM Layer
 The hillshade created above is in grayscale. If you like the look, skip this step. If you like the look of a colorized hillshade, this step is for you. To create the colorized layer:
 
-1. Add the DEM again to QGIS (using the same steps as step 3a) and make sure it is the top layer.
+1. Add the DEM again to QGIS (using the same steps as step 3a) and make sure it is the top layer **or** right-click on the layer in the T0C and select *Duplicate Layer*.
 2. Right click on the DTM in the ToC and select *Properties*.
 3. In the properties dialog select *Symbology*.
 4. In the *Render type* dropdown select *Singleband pseudocolor* (this is the first step that is different than the steps taken to make the hillshade).
@@ -153,8 +160,14 @@ Now you should see a colorized layer **and** the pretty hillshade underneath. Th
  1. Open the *View* menu in the top menu bar and select *New 3D Map View*
  2. In the newly opened dialog, click *Configure*.
  3. For the *Elevation* layer select the hillshade created above.
+ 4. Set the *Vertical scale* to 2.5 (to get a nice *z* exaggeration in the heights).
+ 5. Set the *Tile resolution* to 1024px. The GIF demonstrates the default 16px, 512px, and 1024px. This setting effects the resolution of the visualization.
 
-You should now see a 3D visualization of the 83 DTM VRT, streaming off of an offsite S3 bucket. You can pan/zoom this visualization (hold shift to switch between panning and rotating.) You can also grap the whole *Map View 1* window and embed it next to (or above/below) the initial 2D visualization. This way, you can see both the top down view and the 3D (exaggerated *z* dimension) DTM at the same time.
+ {{< figure src="/images/tutorials/qgis_3d/3d_map_view.gif" alt="A GIF showing how to blend the single band colorized layer with the hillshade using the QGIS symbology dialog" title="A GIF demonstrating blending the  single band colorized layer with the hillshade." >}}
+
+You should now see a 3D visualization of the 83 DTM VRT, streaming off of an offsite S3 bucket. You can pan/zoom this visualization (hold shift to switch between panning and rotating.) You can also grap the whole *Map View 1* window and embed it next to (or above/below) the initial 2D visualization. This way, you can see both the top down view and the 3D DTM at the same time.
+
+
 
 ## Conclusion
 That's it! You now have a 3D, colorized hillshade to play around with. You also know how to search for DTMs from our [API](https://stac.astrogeology.usgs.gov/api), create a VRT from results, load the VRT into QGIS, and create a very cool looking colorized hillshade. Fun next steps might be to try and render a flyover or add the MOLA shaded relief into the 3D visualization as a background layer.
