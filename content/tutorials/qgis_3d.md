@@ -2,12 +2,16 @@
 title: "Visualizing CTX DTMs in 3D Using QGIS"
 date: 2023-04-26
 draft: false
-weight: 30
+weight: 40
 ---
 
  {{< figure src="/images/tutorials/qgis_3d/3d_visualization.png" alt="A PNG showing the final 3d visualization." title="The results of this tutorial, a 3D visualization in Valles Marineris composed of 83 Mars Reconnaissance Orbiter (MRO) Context Camera (CTX) Digital Terrain Models (DTMs)." >}}
 
-In this tutorial, will teach you how to:
+{{< hint type=warning title="Draft" >}}
+This is an in progress draft example. Please feel free to test, but use with caution!
+{{< /hint >}}
+
+In this tutorial, you will learn how to:
 - searching for CTX DTMs using the [STAC API](https://stac.astrogeology.usgs.gov/api)
 - creating a [GDAL Virtual Format](https://gdal.org/drivers/raster/vrt.html) or VRT of a merge of the discovered DTMs
 - use the [QGIS hillshade tool](https://www.geodose.com/2020/02/how-to-make-beautiful-hillshading-map-qgis.html) to create a beautiful hillshade of the merged DTMs
@@ -109,9 +113,9 @@ As you can see, it is significantly easier to see the topography in the MOLA pro
  ### 3a. Load the VRT
  To load the VRT into QGIS:
 
- 1. In the menu bar open the “Layer” menu and choose "Add Raster Layer"
- 2. In the "Add Raster Layer" window navigate to the directory where the VRT was created and select it.
- 3. Click the "Add" button to add the VRT to the project.
+ 1. In the menu bar open the *Layer* menu and choose *Add Raster Layer*
+ 2. In the *Add Raster Layer* window navigate to the directory where the VRT was created and select it.
+ 3. Click the *Add* button to add the VRT to the project.
 
 Alternatively, simply drag the VRT from the directory it is saved in into the Table of Contents (lower left side of the QGIS window).
 
@@ -120,7 +124,12 @@ Alternatively, simply drag the VRT from the directory it is saved in into the Ta
 The VRT that was created in the ROI contains 83 DTMs, but only a single layer is added to QGIS. Why is this? The VRT is a virtual mosaic of all of the DTMs and is effectively combined into a single raster layer. Therefore, it is important to note that this product does contain less data than one would have if they loaded in 83 individual DTMs. This produce also inevitably has small discontinuities in the $z$ dimension due to misalignments to MOLA[^1].
 
 ### 3b. Load the MOLA Shaded Relief (Optional)
-By adding the VRT first, the project SRS is set properly. If you have worked through our QGIS WMS tutorial, add the MOLA shaded relief product. If you haven't, skip this step.
+By adding the VRT first, the project SRS is set properly. If you have worked through our [QGIS WMS tutorial]({{< ref "qgis_add_wms" >}}), add the MOLA shaded relief product. If you haven't, skip this step.
+
+{{< hint type=warning title="Data Load Order Matters" >}}
+As indicated above, the order that data are loaded can matter. If the VRT is loaded first, the project's spatial reference system will be `IAU:2015_49910` which is equirectangular Mars with a spherical body, ocentric latitude and a central longitude of 0. If the WMS layer is added first, the project's CRS will remain `EPSG:4326` which is an Earth based system. If the MOLA shaded relief is added first, make sure to [change the CRS](https://docs.qgis.org/3.28/en/docs/user_manual/working_with_projections/working_with_projections.html#id8) to `IAU:2015_49910`.
+{{< /hint >}}
+
 ### 3c. Create a Hillshade of the DTM
 To create the hillshade:
 1. Right click on the DTM in the Table of Contents (ToC) and select *Properties*. 
