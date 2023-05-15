@@ -17,7 +17,7 @@ In this tutorial, you will learn how to:
 - use the [QGIS hillshade tool](https://www.geodose.com/2020/02/how-to-make-beautiful-hillshading-map-qgis.html) to create a beautiful hillshade of the merged DTMs
 - create a 3d interactive visualization using the [QGIS 3d map capabilities](https://opengislab.com/blog/2018/3/20/3d-dem-visualization-in-qgis-30)
 
-This tutorial is linking together a number of other tutorials (linked above), so if you have any issues, check those out or add a question in the comments section at the end. If you have changes you would like to see, consider [submitting them back to the community via a pull request by clicking the "Edit page" link in the top right of this page.
+This tutorial is linking together a number of other tutorials (linked above), so if you have any issues, check those out or add a question in the comments section at the end. If you have changes you would like to see, consider submitting them back to the community via a pull request by clicking the "Edit page" link in the top right of this page.
 
 ## Prerequisites
 This tutorial requires that you have the following tools installed on your computer:
@@ -167,7 +167,7 @@ Now you should see a colorized layer **and** the pretty hillshade underneath. Th
  Finally, lets create an interactive 3D map view of the colorized hillshade. This section draws heavily from the terrific tutorial by [Stephanie](https://opengislab.com/about-me) available [here](https://opengislab.com/blog/2018/3/20/3d-dem-visualization-in-qgis-30). To create the visualization:
 
  1. Open the *View* menu in the top menu bar and select *New 3D Map View*
- 2. In the newly opened dialog, click *Configure*.
+ 2. In the newly opened dialog, click *Configure* (under the wrench icon).
  3. For the *Elevation* layer select the hillshade created above.
  4. Set the *Vertical scale* to 2.5 (to get a nice *z* exaggeration in the heights).
  5. Set the *Tile resolution* to 1024px. The GIF demonstrates the default 16px, 512px, and 1024px. This setting effects the resolution of the visualization.
