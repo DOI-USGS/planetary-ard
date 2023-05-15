@@ -3,5 +3,4 @@ node_modules/*
 public/*
 resources/_gen/*
 build/*
-*/.DS_Store
-
+.DS_Store
