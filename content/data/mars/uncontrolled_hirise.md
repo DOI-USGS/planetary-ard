@@ -8,8 +8,8 @@ bibFile: "content/bibliography.json"
 
 ### Access the Data
 These data can be accessed in three ways:
-- [Via a search API](stac.astrogeology.usgs.gov/api/collections/mro_hirise_uncontrolled_observations/)
-- [Via a data browser](https://stac.astrogeology.usgs.gov/browser-dev/#/collections/mro_hirise_uncontrolled_observations)
+- [Via a search API](https://stac.astrogeology.usgs.gov/api/collections/mro_hirise_uncontrolled_observations/)
+- [Via a data browser](https://stac.astrogeology.usgs.gov/browser-dev/#/api/collections/mro_hirise_uncontrolled_observations)
 - [Via a web map](https://stac.astrogeology.usgs.gov/geostac/)
  
 ### Overview
