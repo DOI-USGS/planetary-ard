@@ -61,6 +61,10 @@ markup:
     noHl: false
     style: monokai
     tabWidth: 4
+  goldmark:
+    renderer:
+      unsafe: true
+
 
 params:
   geekdocRepo: "https://github.com/DOI-USGS/planetary-ard"
