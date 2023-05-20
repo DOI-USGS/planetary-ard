@@ -23,7 +23,7 @@ On this site you will find:
 
 
 <div style="text-align: center;">
-{{< button href="/tutorials" >}}Tutorials{{< /button >}}{{< button href="/examples" >}}Examples{{< /button >}}{{< button href="/data" >}}Data{{< /button >}}</div>
+{{< button href="/tutorials/" >}}Tutorials{{< /button >}}{{< button href="/examples/" >}}Examples{{< /button >}}{{< button href="/data/" >}}Data{{< /button >}}</div>
 
 
 <--->
