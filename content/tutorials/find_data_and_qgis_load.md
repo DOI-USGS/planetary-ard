@@ -2,7 +2,7 @@
 title: "Search for Data Using Python and Loading Images into QGIS"
 date: 2023-04-26
 draft: false
-weight: 21
+weight: 22
 ---
 
  {{< figure src="/images/tutorials/search_and_qgis_load/qgis_loaded.png" alt="A PNG showing the 86 color observations loaded into QGIS." title="The results of this tutorial, 86 false color HiRISE images streamed from the Amazon Registry of Open Data into QGIS." >}}
@@ -30,7 +30,7 @@ This tutorial requires that you have the following tools installed on your compu
 | [shapely](https://shapely.readthedocs.io/en/stable/manual.html) | 2.0.1 |
 
 ## 1. Setup a Jupyter Notebook
-Over Mars Reconnaissance Orbiter (MRO) High Resolution Science Experiment (HiRISE) observations have been [released as Analysis Ready Data]. These data offer a spectacular high resolution view of the surface of Mars. Since it is not realistic to stream every pixel of the over 100 TB of data, the first step is to select a region of interest. For this tutorial, [Gale Crater](https://en.wikipedia.org/wiki/Gale_(crater)) will be the focus.
+Over Mars Reconnaissance Orbiter (MRO) High Resolution Science Experiment (HiRISE) observations have been [released as Analysis Ready Data]({{< ref "data/mars/uncontrolled_hirise" >}}). These data offer a spectacular high resolution view of the surface of Mars. Since it is not realistic to stream every pixel of the over 100 TB of data, the first step is to select a region of interest. For this tutorial, [Gale Crater](https://en.wikipedia.org/wiki/Gale_(crater)) will be the focus.
 
 
 To start, [launch a jupyter notebook](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/execute.html). In the first cell, all of the necessary libraries will be imported. Copy / paste the following into the first cell.
@@ -144,6 +144,11 @@ This code makes a boolean (True, False) mask of the data based on whether or not
 {{< figure src="/images/tutorials/search_and_qgis_load/footprints_color.png" alt="A PNG showing the footprints for data with the string COLOR in the id." title="The results generated when executing the above command. This is a plot of the footprints where the data `id` contains the string `COLOR`." >}}
 
 ### 7. Generate a list of the Filenames For QGIS 
+
+{{< hint type=warning title="QGIS Environment Variables" >}}
+QGIS is a terrific, open source tool. In order to efficiently stream and load Clod Optimized GeoTiffs, it is necessary to set a few QGIS environment variables. This is standard performance tuning type stuff. Before executing this section, please take a look at the brief tutorial on setting up QGIS for streaming data available [here]({{< ref "qgis_environment_variables" >}}).
+{{< /hint >}}
+
 Unfortunately, QGIS does not have an easy way to bulk load many remote raster datasets. To get the data into QGIS we will make a list of the data and then use the [QGIS python terminal](https://docs.qgis.org/latest/en/docs/user_manual/plugins/python_console.html) to load the layers.
 
 To create the list: copy, paste, and execute the following in the next empty Jupyter notebook cell:
@@ -160,7 +165,8 @@ Now open QGIS and select *Plugins* -> *Python Console*. In the console, type: `t
 
 {{< figure src="/images/tutorials/search_and_qgis_load/toload.gif" alt="A GIF showing the copy/paste of the file list." title="A GIF showing the python console, the creation of the `toload = ` variable and pasting the file list." >}}
 
-Next, paste `layers = [QgsRasterLayer(href, name) for href, name in toload]` into the QGIS python console and execute the code. This code takes a few minutes to run (we are looking into why, but believe it has to do with setting some GDAL environment variables.) This code creates a layer for each of the 86 remote files.
+
+Next, paste `layers = [QgsRasterLayer(href, name) for href, name in toload]` into the QGIS python console and execute the code. This code creates a layer for each of the 86 remote files.
 
 {{< figure src="/images/tutorials/search_and_qgis_load/make_layers.gif" alt="A GIF showing the creation of the layers in QGIS." title="A GIF showing the python console and the creation QGIS layer objects." >}}
 
