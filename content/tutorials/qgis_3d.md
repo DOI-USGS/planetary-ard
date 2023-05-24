@@ -102,6 +102,11 @@ If you want to reproduce the visualization above, you can use the same ROI. If y
  
 
 ## 3. Create a hillshade in QGIS
+
+{{< hint type=warning title="QGIS Environment Variables" >}}
+QGIS is a terrific, open source tool. In order to efficiently stream and load Clod Optimized GeoTiffs, it is necessary to set a few QGIS environment variables. This is standard performance tuning type stuff. Before executing this section, please take a look at the brief tutorial on setting up QGIS for streaming data available [here]({{< ref "qgis_environment_variables" >}}).
+{{< /hint >}}
+
 This section of the tutorial draws almost entirely from @geomatics and their [QGIS hillshade tool](https://www.geodose.com/2020/02/how-to-make-beautiful-hillshading-map-qgis.html) tutorial. Follow along here or follow the link to their tutorial and come back once you created a colorized hillshade (Figure 9 in the linked tutorial).
 
 First, what is a hillshade? The [USGS Earthquakes Hazards Program](https://earthquake.usgs.gov/education/geologicmaps/hillshades.php) defines a hillshade as: "a technique where a lighting effect is added to a map based on elevation variations within the landscape \[that\] provides a clearer picture of the topography by mimicking the sun’s effects (illumination, shading and shadows) on hills and canyons." Below is a screen capture of the VRT, loaded into QGIS, and visualized over a [MOLA hillshade product](https://astrogeology.usgs.gov/search/map/Mars/GlobalSurveyor/MOLA/Mars_MGS_MOLA_Shade_global_463m). 

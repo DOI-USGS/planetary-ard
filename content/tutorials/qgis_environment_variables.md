@@ -42,15 +42,12 @@ Next select *System* on the left side of the *Options* dialog. Scroll to the *En
 | VSI_CACHE | TRUE | Enable VSI caching |
 | VSI_CACHE_SIZE | 5000000 | Increase the VSI cache size |
 
+ {{< figure src="/images/tutorials/qgis_environment_variables/environment.png" alt="A PNG showing environment variables filled in." title="The *Environment* section of the *Options* dialog showing some of the above environment variables populated." >}}
+
 Once each of these environment variables has been added, restart QGIS.
 
-Consider checking out one of our other tutorials that uses QGIS to experience the performance improvements achieved by tuning.
-
-
 ## Conclusion
-That's it! Your QGIS application is now setup for more efficient use of remote resources. 
-
-If you have questions or comments consider chatting below.
+That's it! Your QGIS application is now setup for more efficient use of remote resources. If you have questions or comments consider chatting below.
 
 ## Discuss this Tutorial
 {{< comments >}}
