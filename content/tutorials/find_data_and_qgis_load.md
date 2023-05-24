@@ -8,7 +8,7 @@ weight: 21
  {{< figure src="/images/tutorials/search_and_qgis_load/qgis_loaded.png" alt="A PNG showing the 86 color observations loaded into QGIS." title="The results of this tutorial, 86 false color HiRISE images streamed from the Amazon Registry of Open Data into QGIS." >}}
 
 {{< hint type=warning title="Draft" >}}
-This is an in progress draft example. Please feel free to test, but use with caution!
+This is a work in progress. Please feel free to test, but use with caution!
 {{< /hint >}}
 
 In this tutorial, you will learn how to:
