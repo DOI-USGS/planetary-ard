@@ -19,6 +19,14 @@
   height: 3em;
 }
 
+#europa_dtm_table {
+  border-collapse: separate;
+}
+
+#europa_dtm_table tr:nth-child(even) {
+  background-color: White;
+}
+
 .icon-grid__line--text {
   font-size: 0.8em;
 }
