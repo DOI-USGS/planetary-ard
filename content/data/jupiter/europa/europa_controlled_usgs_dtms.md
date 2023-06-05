@@ -3,7 +3,7 @@ title: "Galileo Controlled DTMs Created by the USGS"
 date: 2023-06-04T12:21:06-07:00
 draft: false
 bibFile: "content/bibliography.json"
-collection: "europa_controlled_usgs_dtms"
+collection: "galileo_usgs_photogrammetrically_controlled_dtms"
 ---
 
 
