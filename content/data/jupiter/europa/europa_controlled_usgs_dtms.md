@@ -207,7 +207,7 @@ The DTMs were generated from Galileo images with improved geometry {{< cite "Bla
 ### Cite these data
 These data are released under the [CC0-1.0 license](https://creativecommons.org/publicdomain/zero/1.0/), meaning you can copy, modify, and distribution these data without permissions. We ask that you cite these data if you make use of them. The citation to be used is:
 
-> 
+> Bland, M.T.; Kirk, R.L.; Galuszka, D.M.; Mayer, D.P.; Beyer, R.A.; Fergason, R.L. How Well Do We Know Europa’s Topography? An Evaluation of the Variability in Digital Terrain Models of Europa. Remote Sens. 2021, 13, 5097. https://doi.org/10.3390/rs13245097 
 
 ### Discuss the Data
 <meta property="og:title">
