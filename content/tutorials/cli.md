@@ -129,7 +129,7 @@ At the time of writing, the above command will return six different collections 
 
 The full dump of collection metadata is a lot to parse and likely not information needed all at once. It would be easier to just get the human readable title and the machine parseable collection id. To do this:
 
-    stac-client collections https://stac.astrogeology.usgs.gov/api | jq '.[] | "\(.title) \(.id)"'
+    `stac-client collections https://stac.astrogeology.usgs.gov/api | jq '.[] | "\(.title) \(.id)"'`
 
 The output should look something similar to the following:
 
@@ -147,9 +147,9 @@ This tutorial is using the [jq](https://stedolan.github.io/jq/) command line JSO
 {{% /notice %}}
 
 ### 7. Querying a Specific Collection
-To see how many items (observations) are available within a given collection, it is necessary to tell *stac-client* which collection to search. We know the names of the collections because they are the *id* key in the STAC collection. In the example immediately above, the line is `"id": "usgs_controlled_mosaics_voy1_voy2_galileo"`. Since we are interested in Kaguya TC data, we will use the following command:
+To see how many items (observations) are available within a given collection, it is necessary to tell *stac-client* which collection to search. We know the names of the collections because they are the *id* key in the STAC collection. In the example immediately above, the line is `"id": "mro_hirise_uncontrolled_observations"`. Since we are interested in MRO HiRISE data, we will use the following command:
 
-  stac-client search https://stac.astrogeology.usgs.gov/api/ -c mro_hirise_uncontrolled_observations --matched
+  `stac-client search https://stac.astrogeology.usgs.gov/api/ -c mro_hirise_uncontrolled_observations --matched`
 
 The response should be:
 
@@ -160,7 +160,7 @@ The response should be:
 ### 6. Spatial Queries
 Above, we created a file named `aoi.geojson` that defines an area of interest. Now we will combine that with a query for the target body we are interested in. Here is the full command:
 
-    stac-client search https://stac.astrogeology.usgs.gov/api/ --intersects aoi.geojson -c mro_hirise_uncontrolled_observations --save hirise_to_download.json
+  `stac-client search https://stac.astrogeology.usgs.gov/api/ --intersects aoi.geojson -c mro_hirise_uncontrolled_observations --save hirise_to_download.json`
 
 Lets break this command down like we did above:
 
@@ -203,7 +203,7 @@ done
 
 Then you can download the files that were found by the search using the following:
 
-  ./download_stac.sh hirise_to_download.json
+  `./download_stac.sh hirise_to_download.json`
 
 This command will run for a few minutes (on a relatively fast internet connection). At the conclusion of the run, you should have a new directory called `hirise_uncontrolled_monoscopic`. Inside of that directory, you should see four sub-directories, each containing **all** of the data for the stac items we discovered previously!
 
