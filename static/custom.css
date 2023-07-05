@@ -2,6 +2,10 @@
   --code-max-height: 60rem;
 }
 
+figure {
+  text-align: center;
+}
+
 .icon-grid {
   width: 8rem;
   height: 8rem;
