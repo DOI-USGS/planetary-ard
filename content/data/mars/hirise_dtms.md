@@ -2,7 +2,7 @@
 title: "HiRISE DTMs and Orthoimages"
 date: 2021-08-28T05:44:09-07:00
 weight: 10
-draft: true
+draft: false
 bibFile: "content/bibliography.json"
 ---
 
