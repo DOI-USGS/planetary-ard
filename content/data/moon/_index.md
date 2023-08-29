@@ -1,8 +1,7 @@
 ---
-title: "Lunar"
+title: "Moon"
 date: 2021-08-28T05:41:46-07:00
-geekdocHidden: true
+geekdocHidden: false
 ---
 
-# Available lunar data
-An overview of the available lunar data.
+## Available lunar data
