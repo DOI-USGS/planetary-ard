@@ -11,13 +11,13 @@ Data were collected in three observing modes. Each mode is separated into a diff
 | -------------- | ---------------- |
 | Monoscopic | [Via a search API](https://stac.astrogeology.usgs.gov/api/collections/kaguya_terrain_camera_monoscopic_uncontrolled_observations/) |
 | Monoscopic | [Via a data browser](https://stac.astrogeology.usgs.gov/browser-dev/#/api/collections/kaguya_terrain_camera_monoscopic_uncontrolled_observations) |
-| Monoscopic | [Via a web map](https://stac.astrogeology.usgs.gov/geostac/) |
+| Stereoscopic | [Via a search API](https://stac.astrogeology.usgs.gov/api/collections/kaguya_terrain_camera_stereoscopic_uncontrolled_observations/) |
+| Stereoscopic| [Via a data browser](https://stac.astrogeology.usgs.gov/browser-dev/#/api/collections/kaguya_terrain_camera_stereoscopic_uncontrolled_observations) |
 | Stereoscopic | To be released. |
-| Stereoscopic| To be released. |
-| Stereoscopic | To be released. |
 | Spectral Profiler Support | To be released. |
 | Spectral Profiler Support | To be released. |
 | Spectral Profiler Support | To be released. |
+| All | [Via a web map](https://stac.astrogeology.usgs.gov/geostac/) |
 
 ### Overview
 The Japan Aerospace EXploration Agency (JAXA) SELenological and ENgineering Explorer (SELENE) mission’s Kaguya spacecraft was launched on September 14, 2007 and science operations around the Moon started October 20, 2007. The primary mission in a circular polar orbit 100-km above the surface lasted from October 20, 2007 until October 31, 2008. An extended mission was then conducted in lower orbits (averaging 50km above the surface) from November 1, 2008 until the SELENE mission ended with Kaguya impacting the Moon on June 10, 2009 \cite{Kato:2010ssr}
