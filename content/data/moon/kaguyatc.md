@@ -39,6 +39,8 @@ Data were processed from the level 2B0 archive hosted by DARTS. These data have 
 
 Across all three collections the L2B0 data are ingested into the Integrated Software for Imagers and Spectrometers (ISIS), version 7.2.0 \cite{isis7.2.0}. During the ingest, DN values identified by the LISM product format description {{< cite "LISM:2010" >}} as being invalid are mapped to a logical no-data-value. NAIF Spice data are attached to every image, using the improved extended mission kernels {{< cite "Goossens:2020" >}}, for all data collected during the extended mission. Once ingested, the TC data are map projected to an equirectangular projection (all data between 65˚S / 65˚N) or appropriate polar stereographic (pole centered) projection for data storage. Finally, the Geospatial Data Abstration Library (GDAL) was used to convert the ISIS cube into a Cloud Optimized GeoTIFF (COG) and metadata were generated. These data maintain the 16bit input data type and use a scaling value to convert from the stored DN to radiance.
 
+These data have been processed in collaboration with JAXA and are provided in accordance with the [JAXA Institute of Space and Astronomical Science (ISAS) Data Policy](https://www.isas.jaxa.jp/en/researchers/data-policy/).
+
 ### Available Assets
 - JPEG thumbnail browse image
 - 16-bit Cloud Optimied GeoTIFF (COG) with scale and offset defined. Some tools will automatically apply the scale/offset to the pixel value to recover the original DN.
@@ -66,6 +68,8 @@ Next, these data are not photometrically or geometrically corrected. The lack of
 These data are released under the [CC0-1.0 license](https://creativecommons.org/publicdomain/zero/1.0/), meaning you can copy, modify, and distribution these data without permissions. We ask that you cite these data if you make use of them. The citation to be used is:
 
 > Laura, J.R., Hare, T.M., Sato, H., Yamamoto, Y., Murakami, S., and Nakahira, S. 2023. Kaguya Terrain Camera Monoscopic, Stereoscopic, and Spectral Profiler Support Analysis Ready Data Release. https://doi.org/10.5066/P9SH5YNV
+
+Please also consider citing the original source data, provided by JAXA via [DARTS](https://darts.isas.jaxa.jp).
 
  ### Discuss the Data
 <meta property="og:title">
