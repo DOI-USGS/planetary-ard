@@ -14,10 +14,8 @@ Data were collected in three observing modes. Each mode is separated into a diff
 | Monoscopic | [Via a data browser](https://stac.astrogeology.usgs.gov/browser-dev/#/api/collections/kaguya_terrain_camera_monoscopic_uncontrolled_observations) |
 | Stereoscopic | [Via a search API](https://stac.astrogeology.usgs.gov/api/collections/kaguya_terrain_camera_stereoscopic_uncontrolled_observations/) |
 | Stereoscopic| [Via a data browser](https://stac.astrogeology.usgs.gov/browser-dev/#/api/collections/kaguya_terrain_camera_stereoscopic_uncontrolled_observations) |
-| Stereoscopic | To be released. |
-| Spectral Profiler Support | To be released. |
-| Spectral Profiler Support | To be released. |
-| Spectral Profiler Support | To be released. |
+| Spectral Profiler Support | [Via a search API](https://stac.astrogeology.usgs.gov/api/collections/kaguya_terrain_camera_spsupport_uncontrolled_observations/) |
+| Spectral Profiler Support | [Via a data browser](https://stac.astrogeology.usgs.gov/browser-dev/#/api/collections/kaguya_terrain_camera_spsupport_uncontrolled_observations) |
 | All | [Via a web map](https://stac.astrogeology.usgs.gov/geostac/) |
 
 ### Overview
