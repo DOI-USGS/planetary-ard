@@ -201,6 +201,8 @@ for row in $(cat $1 | jq -r '.features[] | @base64'); do
 done
 ```
 
+If wanted, one could use rclone to download the files instead of wget, where the above wget command would transfer to: `rclone copy "$href" "${collection}"/${dir}`
+
 Then you can download the files that were found by the search using the following:
 
   `./download_stac.sh hirise_to_download.json`
