@@ -62,6 +62,7 @@ HiRISE has had issues with bit flips, described by {{< cite "McEwen:2010" >}}, w
 Smearing can occur if some motion on the spacecraft affected the uniform down-track advance rate required for TDI and accurate line-scan imaging. This usually results in cross-track bands of smeared pixels, which can be particularly obvious in COLOR products because the data from the three color channels is acquired at slightly different times and thus different parts of the surface are smeared in different colors. Somewhat similar effects can result from moving features on Mars: color fringes sometimes appear in dust devils or avalanche clouds, and have been used to measure their velocity {{< cite "Russell:2008" >}}.
 
 A variety of other issues and artifacts may be found in some data. Pattern noise (regular patterns) and other electronic artifacts occasionally occur and are most visible in smooth, bland areas. Some images from 2017-2018 are blurred {{< cite "McEwen:2018" >}}. This blurring was eventually mitigated by more effective warming of the focal plane electronics. Cosmic ray hits on the CCD detectors can also create artifacts in the form of few-pixel bright features.   
+
 ### General Usability
 The most straightforward use case for these analysis-ready products is for qualitative interpretation of the geology and geomorphology of Mars. HiRISE has better spatial resolution than any other past or present camera in Mars orbit and a very high signal-to-noise ratio. In most cases, where HiRISE data exist, they are the best-quality imaging data available. 
 
@@ -82,7 +83,6 @@ Thus, while the quantitative I/F values are physically meaningful, they do not d
 
 Although stereogrammetry allows derivation of DTMs from pairs of HiRISE images {{< cite "Kirk:2008" >}}, use of parallax or stereo analysis to infer topographic relief is not recommended with these data, because the orthorectification of the RDRs to the smoothed MOLA DTM removes the long-baseline component of the topography.  
  
-
 ### Related Data
 A wide variety of additional data sets can be analyzed with HiRISE. The most closely related are data from the Compact Reconnaissance Imaging Spectrometer for Mars (CRISM; {{< cite "Murchie:2007" >}}) and the Context Camera (CTX; {{< cite "Malin:2007" >}}). CRISM is a hyperspectral imaging spectrometer with spectral channels covering visible and near-IR wavelengths and a pixel scale as small as 18 m for local areas, and CTX is a monochromatic imager with near-global coverage at 6 m/pix. Both instruments are onboard MRO with HiRISE and in many cases, data products covering the same area were collected simultaneously by two or three of the instruments as coordinated observations. The coordinated observations are particularly suitable for co-analysis because lighting and atmospheric conditions are identical. Users should note that projection approaches for CTX and CRISM data from various sources may be different, so even simultaneously collected data may not register perfectly.
 
@@ -90,6 +90,11 @@ A wide variety of additional data sets can be analyzed with HiRISE. The most clo
 These data are released under the [CC0-1.0 license](https://creativecommons.org/publicdomain/zero/1.0/), meaning you can copy, modify, and distribution these data without permissions. We ask that you cite these data if you make use of them. The citation to be used is:
 
 > Laura, J.R., Dundas, C.M., Fienen, M.N., Wakefield, B.F., and Hare, T.M. (2023) Analysis Ready Data: Uncontrolled Mars Reconnaissance Orbiter (MRO) High Resolution Science Experiment (HiRISE) Reduced Data Record (RDR)s. https://doi.org/10.5066/P944DLP8
+
+### FAQ
+
+**Q: When searching by product ID, I am not getting any results. Why not?**
+**A:** Most HiRISE product IDs have two different observations associated with then, a RED observation and a color observation. STAC using the product ID as a unique identifier. Therefore, when searching by product ID, make sure to include either `_RED` or `_COLOR` after your ID. For example, `ESP_034285_1835` has two different observations in the collection: `ESP_034285_1835_RED` and `ESP_034285_1835_COLOR`. 
 
 ### Discuss the Data
 <meta property="og:title">
