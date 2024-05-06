@@ -95,7 +95,7 @@ These data are released under the [CC0-1.0 license](https://creativecommons.org/
 
 **Q: When searching by product ID, I am not getting any results. Why not?**
 
-**A:** Most HiRISE product IDs have two different observations associated with then, a RED observation and a color observation. STAC using the product ID as a unique identifier. Therefore, when searching by product ID, make sure to include either `_RED` or `_COLOR` after your ID. For example, `ESP_034285_1835` has two different observations in the collection: `ESP_034285_1835_RED` and `ESP_034285_1835_COLOR`. 
+**A:** Most HiRISE product IDs have two different observations associated with then, a RED observation and a color observation. STAC requires using the product ID as a unique identifier. Therefore, when searching by product ID, make sure to include either `_RED` or `_COLOR` after your ID. For example, `ESP_034285_1835` has two different observations in the collection: `ESP_034285_1835_RED` and `ESP_034285_1835_COLOR`. In the future, we might make two different collections so that users can search for just RED or COLOR observations. Comment below if that capability would help you.
 
 ### Discuss the Data
 <meta property="og:title">
