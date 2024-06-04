@@ -22,7 +22,7 @@ The [Kaguya Terrain Camera analysis-ready data](kaguyatc.md) documentation provi
 3. Create DTMs at least 0.5˚ latitude in total along-track size.
 4. Produce overlapping DTM coverage to support accuracy and precision analysis of the results.
 
-The DTMs in this data set are released using the standard three-times input image resolution rule of thumb (CITE KIRK), resulting in DTM resolutions between 7 and 37 meters per pixel.
+The DTMs in this data set are released using the standard three-times input image resolution rule of thumb {{< cite "Kirk:2008;Kirk:2020" >}}, resulting in DTM resolutions between 7 and 37 meters per pixel.
 
 {{< figure src="/images/data/moon/kaguyatc_dtms/kaguya_coverage.png" alt="Kaguya TC DTM coverage map showing resolution of more than 147,000 DTMs." caption="Kaguya TC DTMs over a LOLA hillshade showing the distribution of DTMs, colored by image resolution. The longitude domain is -180 to 180 with a center longitude of 0˚" >}}
 
