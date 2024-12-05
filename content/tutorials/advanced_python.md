@@ -5,16 +5,16 @@ draft: false
 weight: 21
 ---
 
-This tutorial focuses on advancing the previous knowledge of searching for and downloading Analysis Ready Data (ARD) from a dynamic Spatio-Temporal Asset Catalog (STAC) using the python programming language. As one gets into more advanced queries, new tools can be used to speed up the process. In this tutorial we will use [`async`](https://docs.python.org/3/library/asyncio.html) to help us retrieve a list of url's that we want before using `rclone` to download them from the cloud. Rclone is perfered when accessing the cloud as opposed to `wget` or `urllib.request.urlretrieve`.
+This tutorial focuses on advancing the previous knowledge of searching for and downloading Analysis Ready Data (ARD) from a dynamic Spatio-Temporal Asset Catalog (STAC) using the python programming language. As one gets into more advanced queries, new tools can be used to speed up the process. In this tutorial we will use [`async`](https://docs.python.org/3/library/asyncio.html) to help us retrieve a list of url's that we want before using `rclone` to download them from the cloud. Rclone is preferred when accessing the cloud as opposed to `wget` or `urllib.request.urlretrieve`.
 
 ## Configuring the environment
 For this tutorial you will need `pystac_client` (refer to "Discovering and Downloading Data with Python" for an example of how to get this set up), `pandas`, `geopandas`, `shapely`, `pvl`, `aiohttp` and `asyncio`. These packages can all be installed with pip or conda depending on preference.
 
 ### A quick aside about async
-Why use async? Async allows you to write more eddiecient and responsive code. Tradionally, python programs execute code sequentially, which can lead to delays while eaiting for tasks to cpmplete (such as network requests). Async is based on asychronous programing and is implimented through Python's `asyncio` module. It enables non-blocking execution. In this tutorial we will use it to quickly find the data we need.
+Why use async? Async allows you to write more efficient and responsive code. Traditionally, python programs execute code sequentially, which can lead to delays while waiting for tasks to complete (such as network requests). Async is based on asynchronous programming and is implemented through Python's `asyncio` module. It enables non-blocking execution. In this tutorial we will use it to quickly find the data we need.
 
 ## The goal
-In this tutorial we want to use the API to access several databases and then retrieve urls based on a certain critera. For the purposes of this example we will be looking at the incidence angle of each image. Lets start by getting our file set up, for the purposes of this example, we will say we are trying to get images in a certain bounding box.
+In this tutorial we want to use the API to access several databases and then retrieve urls based on a certain criteria. For the purposes of this example we will be looking at the incidence angle of each image. Lets start by getting our file set up, for the purposes of this example, we will say we are trying to get images in a certain bounding box.
 
 ```python
 from pystac_client import Client
