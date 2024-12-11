@@ -36,7 +36,7 @@ Mosaic.json is a [open standard][3] for defining a mosaic of ARD assets that can
 
 Most commonly used web-maps work by representing the world with a series of images of constant dimension produced at a variety of resolutions (aka zoom levels) in what is commonly called a tile grid or pyramid structure. For the Earth, Google popularized a tile grid that used a Pseudo Mercator map projection within google maps that is now the defacto standard. To support additional map projections (and other planetary bodies in the solar system), we can use an OGC standard called the TileMatrixSet, which is a JSON document that is able to define other kinds of tile grids other than just Pseudo Mercator in a way that other software is aware of to correctly request the correct map tile for the given area of interest.  
 
-[Tile Matrix Sets][5] (a.k.a. TMS(s)) are an OGC standard for defining two dimensional hirearchical grids. 
+[Tile Matrix Sets][5] (a.k.a. TMS(s)) are an OGC standard for defining two dimensional hierarchical grids. 
 
 ![TMS pyramid structure diagram credit OGC](/img/tms.svg)
 
@@ -65,7 +65,7 @@ Jezero is located at Longitude Latitude 77.69 E, 18.41 N in mc13
 
 ![Jezero Crater overview from USGS-Astrogeology Center](https://astrogeology.usgs.gov/ckan/dataset/004cc4e5-af74-453b-8d51-ee886c6f4ac2/resource/85abd39a-0097-4b89-ac33-0e8cc9abe6d6/download/m2020_jezerocrater_ctxdem_mosaic-slide.png)
 
-With this information, we can define a query geometry as a bounding box quickly by hand or by using the Shapely library. To start off let's import the various python libraries we will need and then define the jezero bounds as a variable we'll call `jez`. 
+With this information, we can define a query geometry as a bounding box quickly by hand or by using the Shapely library. To start off let's import the various python libraries we will need and then define the Jezero bounds as a variable we'll call `jez`. 
 
 ```python
 import json
@@ -128,7 +128,7 @@ stac-client search https://stac.astrogeology.usgs.gov/api/ --intersects jezero_a
 
     10
 
-Let's examine the kinds of assets we have for each DTM proudct
+Let's examine the kinds of assets we have for each DTM product
 
 
 ```bash
