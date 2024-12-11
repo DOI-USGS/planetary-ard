@@ -38,7 +38,8 @@ Most commonly used web-maps work by representing the world with a series of imag
 
 [Tile Matrix Sets][5] (a.k.a. TMS(s)) are an OGC standard for defining two dimensional hierarchical grids. 
 
-![TMS pyramid structure diagram credit OGC](/img/tms.svg)
+
+ {{< figure src="/images/tutorials/mosaic_json/tms.webp" alt="TMS pyramid structure diagram credit OGC" >}} 
 
 
 ### References:
@@ -63,7 +64,7 @@ For this tutorial we will focus on Mars and the CTX DTM ARD data that is availab
 
 Jezero is located at Longitude Latitude 77.69 E, 18.41 N in mc13
 
-![Jezero Crater overview from USGS-Astrogeology Center](https://astrogeology.usgs.gov/ckan/dataset/004cc4e5-af74-453b-8d51-ee886c6f4ac2/resource/85abd39a-0097-4b89-ac33-0e8cc9abe6d6/download/m2020_jezerocrater_ctxdem_mosaic-slide.png)
+ {{< figure src="/images/tutorials/mosaic_json/usgs_jezero.webp" alt="Jezero Crater overview from USGS-Astrogeology Center." >}} 
 
 With this information, we can define a query geometry as a bounding box quickly by hand or by using the Shapely library. To start off let's import the various python libraries we will need and then define the Jezero bounds as a variable we'll call `jez`. 
 

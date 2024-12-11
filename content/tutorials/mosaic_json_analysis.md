@@ -1,5 +1,5 @@
 ---
-title: "Analysis with Mosaic.json"
+title: "Mosaic.json Analysis"
 date: 2024-12-10T12:00:00-07:00
 draft: false
 weight: 20
@@ -46,14 +46,14 @@ Let this process continue to run as you proceed through the terminal, but it can
 
 
 
-## 1. Basic mosaic.json metadata queries
+## Basic mosaic.json metadata queries
 
 Using TiTiler's REST api, we will make some basic queries demonstrating use of our mosaic.json documents.
 First we will copy the mosaic.json files (assuming they are in the current working directory) to /tmp/ for shorter file paths later on in the tutorial.
 
 
 ```python
-!cp *mosaic.json /tmp/ 
+cp *mosaic.json /tmp/ 
 ```
 
 Next we will perform some imports
@@ -331,23 +331,23 @@ As loading these files is as simple as dragging and dropping the files into the 
 
 First let's see the whole extent of the hillshade mosaic.
 
- {{< figure src="/images/tutorials/mosiac_json_analysis/qgis_zoomed_out_hillshade.webp" alt="A image showing the QGIS window with the full extent of the hillshade mosaic." >}}   
+ {{< figure src="/images/tutorials/mosaic_json_analysis/qgis_zoomed_out_hillshade.webp" alt="A image showing the QGIS window with the full extent of the hillshade mosaic." >}}   
 
 Zooming in we can see more detail at Jezero crater.
 
- {{< figure src="/images/tutorials/mosiac_json_analysis/qgis_zoomed_in_hillshade.webp" alt="A image showing the QGIS window with the hillshade mosaic zoomed in to Jezero Crater." >}}
+ {{< figure src="/images/tutorials/mosaic_json_analysis/qgis_zoomed_in_hillshade.webp" alt="A image showing the QGIS window with the hillshade mosaic zoomed in to Jezero Crater." >}}
 
 Next we can display the ortho image mosaic. Due to the processing of the ortho mosaic products, the brightness of the various images is not uniform resulting in sharp changes where assets overlap
 
- {{< figure src="/images/tutorials/mosiac_json_analysis/qgis_zoomed_in_ortho.webp" alt="A image showing the QGIS window with the ortho image mosaic zoomed in to Jezero Crater" >}}
+ {{< figure src="/images/tutorials/mosaic_json_analysis/qgis_zoomed_in_ortho.webp" alt="A image showing the QGIS window with the ortho image mosaic zoomed in to Jezero Crater" >}}
 
 The DTM mosaic can be styled using QGIS layer options like any raster dataset, so we used the cividis colormap and scaled the data to the elevation range of -3200m to 0m.
 
- {{< figure src="/images/tutorials/mosiac_json_analysis/qgis_zoomed_in_dtm.webp" alt="A image showing the QGIS window with the DTM mosaic zoomed in to Jezero Crater" >}}
+ {{< figure src="/images/tutorials/mosaic_json_analysis/qgis_zoomed_in_dtm.webp" alt="A image showing the QGIS window with the DTM mosaic zoomed in to Jezero Crater" >}}
 
 As QGIS provides powerful features such as on-the-fly contour computation, we can make a copy of the DTM map layer with the contour style applied and see it overlain ontop of the ortho mosaic. Contours are every 50 meters of elevation with index levels every 250 meters in white. 
 
- {{< figure src="/images/tutorials/mosiac_json_analysis/qgis_zoomed_in_hillshade.webp" alt="A image showing the QGIS window with the ortho image mosaic and overlain contours zoomed in to Jezero Crater" >}}
+ {{< figure src="/images/tutorials/mosaic_json_analysis/qgis_zoomed_in_hillshade.webp" alt="A image showing the QGIS window with the ortho image mosaic and overlain contours zoomed in to Jezero Crater" >}}
 
 # Generate WMTS xml files for Rasterio 
 
@@ -540,7 +540,7 @@ Image.fromarray(wmts_hillshade)
     725 1867
 
 
- {{< figure src="/images/tutorials/mosiac_json_analysis/hillshade_mosaic_rasterio.webp" alt="A image showing the hillshaded mosaic image as loaded by rasterio." >}}   
+ {{< figure src="/images/tutorials/mosaic_json_analysis/hillshade_mosaic_rasterio.webp" alt="A image showing the hillshaded mosaic image as loaded by rasterio." >}}   
 
 
 
@@ -559,17 +559,11 @@ plt.colorbar()
     725 1867
 
 
-
-
-
-    <matplotlib.colorbar.Colorbar at 0x17cca3d70>
-
-
- {{< figure src="/images/tutorials/mosiac_json_analysis/ortho_mosaic_rasterio.webp" alt="A image showing the ortho mosaic image as loaded by rasterio." >}}   
+ {{< figure src="/images/tutorials/mosaic_json_analysis/ortho_mosaic_rasterio.webp" alt="A image showing the ortho mosaic image as loaded by rasterio." >}}   
     
 
 
-Next we will do the same request except we will ask for zoom level 9, which will result in 4x the number of pixels, and so will take longer to finish.
+Next we will do the same request except we will ask for zoom level 9, which will result in four times the number of pixels, and so will take longer to finish loading.
 
 
 ```python
@@ -584,7 +578,7 @@ plt.colorbar();
     1448 3733
 
     
- {{< figure src="/images/tutorials/mosiac_json_analysis/ortho_mosaic_rasterio_zoom_9.webp" alt="A image showing the ortho mosaic image as loaded by rasterio." >}}   
+ {{< figure src="/images/tutorials/mosaic_json_analysis/ortho_mosaic_rasterio_zoom_9.webp" alt="A image showing the ortho mosaic image as loaded by rasterio with zoom level 9." >}}   
 
 
 For more proof that the actual floating point data was loaded we can plot a histogram to demonstrate that:
@@ -596,7 +590,7 @@ plt.hist(wmts_ortho.ravel(), linspace(0.001,1,100));
 ```
 
 
- {{< figure src="/images/tutorials/mosiac_json_analysis/ortho_mosaic_hist.webp" alt="A image showing the histogram of the ortho mosaic image as loaded by rasterio." >}}   
+ {{< figure src="/images/tutorials/mosaic_json_analysis/ortho_mosaic_hist.webp" alt="A image showing the histogram of the ortho mosaic image as loaded by rasterio." >}}   
 
 
 Next we will load the DTM mosaic with rasterio and display it with matplotlib. Due to some quirks with the GDAL WMTS driver and how empty tiles are handled, we will need to manually map values of `0.0` to the nodata value used of `-32767.0` for the DTM products. We also then reassign those values to `nan` to permit better plotting in matplotlib. We will also plot the DTM with the cividis colormap to illustrate the elevation range in the data.
@@ -616,7 +610,7 @@ plt.colorbar();
 
     725 1867  
     
- {{< figure src="/images/tutorials/mosiac_json_analysis/dtm_mosaic_rasterio.webp" alt="A image showing the DTM mosaic image as loaded by rasterio and plotted to a elevation range of -3200m to 0m." >}} 
+ {{< figure src="/images/tutorials/mosaic_json_analysis/dtm_mosaic_rasterio.webp" alt="A image showing the DTM mosaic image as loaded by rasterio and plotted to a elevation range of -3200m to 0m." >}} 
 
 
 ### Questions or Comments?
