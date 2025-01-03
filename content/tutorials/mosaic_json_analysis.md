@@ -347,7 +347,7 @@ The DTM mosaic can be styled using QGIS layer options like any raster dataset, s
 
 As QGIS provides powerful features such as on-the-fly contour computation, we can make a copy of the DTM map layer with the contour style applied and see it overlain ontop of the ortho mosaic. Contours are every 50 meters of elevation with index levels every 250 meters in white. 
 
- {{< figure src="/images/tutorials/mosaic_json_analysis/qgis_zoomed_in_hillshade.webp" alt="A image showing the QGIS window with the ortho image mosaic and overlain contours zoomed in to Jezero Crater" >}}
+ {{< figure src="/images/tutorials/mosaic_json_analysis/qgis_zoomed_in_contours.webp" alt="A image showing the QGIS window with the ortho image mosaic and overlain contours zoomed in to Jezero Crater" >}}
 
 # Generate WMTS xml files for Rasterio 
 
