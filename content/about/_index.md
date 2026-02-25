@@ -1,7 +1,7 @@
 +++
 title = "About ARD"
 date = 2021-08-28T05:40:13-07:00
-weight = 9
+weight = 5
 chapter = true
 bibFile = "content/bibliography.json"
 +++
