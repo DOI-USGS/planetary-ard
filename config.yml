@@ -18,14 +18,6 @@ enableGitInfo: true
 
 enableRobotsTXT: true
 
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-  tableOfContents:
-    startLevel: 1
-    endLevel: 9
-
 taxonomies:
   tag: tags
 
