@@ -37,6 +37,7 @@ security:
   exec:
     allow:
       - "^asciidoctor$"
+      - "^git$"
 
 markup:
   highlight:
