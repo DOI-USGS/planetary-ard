@@ -8,8 +8,8 @@ bibFile: "content/bibliography.json"
 
 ### Access the Data
 These data can be accessed in three ways:
-- [Via a search API](https://stac.astrogeology.usgs.gov/api/collections/mro_hirise_controlled_socet_dtms)
-- [Via a data browser](https://stac.astrogeology.usgs.gov/browser-dev/#/api/mro_hirise_controlled_socet_dtms)
+- [Via a search API](https://stac.astrogeology.usgs.gov/api/collections/mro_hirise_socet_dtms)
+- [Via a data browser](https://stac.astrogeology.usgs.gov/browser-dev/#/api/mro_hirise_socet_dtms)
 - [Via a web map](https://stac.astrogeology.usgs.gov/geostac/)
 
 ### Overview
