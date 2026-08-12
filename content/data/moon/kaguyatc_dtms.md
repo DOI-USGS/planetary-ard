@@ -5,10 +5,15 @@ weight: 3
 bibFile: "content/bibliography.json"
 ---
 
+!!! warning
+    As of July 1, 2026, these data have been update with a version 2.0 release. The version 1.0 release are still available for download and use. This documentation notes where the version 1.0 and version 2.0 data differ.
+
 ### Access the Data
 These data can be accessed in three ways:
-- [Via a search API](https://stac.astrogeology.usgs.gov/api/collections/kaguya_terrain_camera_usgs_dtms)
-- [Via a data browser](https://stac.astrogeology.usgs.gov/browser-dev/#/api/collections/kaguya_terrain_camera_usgs_dtms)
+- [Via a search API v1.0](https://stac.astrogeology.usgs.gov/api/collections/kaguya_terrain_camera_usgs_dtms)
+- [Via a data browser v1.0](https://stac.astrogeology.usgs.gov/browser-dev/#/api/collections/kaguya_terrain_camera_usgs_dtms)
+- [Via a search API v2.0](https://stac.astrogeology.usgs.gov/api/collections/kaguya_terrain_camera_usgs_dtms_v2)
+- [Via a data browser v2.0](https://stac.astrogeology.usgs.gov/browser-dev/#/api/collections/kaguya_terrain_camera_usgs_dtms_v2)
 - [Via a web map](https://stac.astrogeology.usgs.gov/geostac/)
 
 {{< figure src="/images/data/moon/kaguyatc_dtms/kaguyatc_dtm_mosaic.png" alt="A mosaic of overlapping Kaguya TC DTMs." caption="A Kaguya TC DTM observation mosaic with all DTMs using the same color ramp. Overlaying the DTMs are footprints showing the expected extent of each DTM in the dataset. Yellow footprints indicate that the DTM is included in the mosaic and blue footprints indicate that the DTM is omitted." >}}
@@ -43,18 +48,31 @@ DTM mosaics were generated and the sensor model intrinsics: boresight, focal len
 
 {{< figure src="/images/data/moon/kaguyatc_dtms/mosaic_transect.png" alt="Four DTM transect (bottom, red line) and offsets to LOLA" caption="Eleven Kaguya TC DTMs with an across track transect showing no discernable offsets at DTM edges. The green and brown points show offsets to the LOLA DTM and appear to be correlated not with the image center or edges, but rather with high relief. This demonstrates that the updated sensor intrinsics are modeling sensor distortion better than the original distortion parameters." >}}
 
+The version 2.0 DTMs underwent two additional rounds of sensor model intrinsic re-estimation focusing on the nominal swath width, evening illumination. This re-estimation was performed to further reduce systematic vertical error.
+
 #### DTM Generation
 The DTMs were generated using a five-step process and the NASA Ames Stereo Pipeline. First, data were ingested and USGSCSM sensor model was created for each observation. These sensor models use the updated sensor intrinsics. Next, each stereopair was bundle adjusted and a low-resolution DTM was created. Third, the low-resolution DTM and updated sensor ephemerides (from the previous bundle adjustment) were used to map project each image in the stereo pair and full-resolution stereo extraction was performed. Next, the full-resolution point cloud was aligned to the [LOLA point cloud](lola.md) using a multi-step process that estimated the maximum allowable displacement and updated the absolute position of the full-resolution DTM relative to LOLA. Fifth, the point cloud and computed adjustment for alignment to LOLA were used to generate the released DTM and estimate quality statistics.
 
 #### Iterative Alignment
 Alignment to LOLA was performed using a four-step process. First, we extract the LOLA point cloud from our released [LOLA ARD](lola.md) using the approximate DTM footprint and a small buffer. This results in a LOLA point cloud, in CSV format, that can be used for alignment. Second, we perform an alignment, setting the maximum displacement to three times the median offset between the ASP-derived point cloud and the LOLA point cloud. Next, if that iteration raises warnings that the estimated maximum displacement is more than the provided maximum displacement, we run a second adjustment where the maximum displacement is set to the maximum displacement estimated by the previous tool run. Fourth, after the initial gross adjustment is estimated, we then perform a final alignment using the Fast Global Registration algorithm. This final adjustment makes small tweaks to the overall position of the DTM.
 
-### Available Assets
+### Available Assets v1.0
 - JPEG thumbnail browse image generated from the DTM hillshade
 - Digital Terrain Model (DTM) with units in meters reporting height above the sphere (note that these DTMs are not geoid adjusted), as a Cloud Optimized GeoTIFF (COG)
 - Hillshade, as a Cloud Optimized GeoTIFF (COG)
 - An ASP generated intersection error raster showing the triangulation error in the point cloud, as a Cloud Optimized GeoTIFF (COG)
 - Orthoimage using the left observation from the stereopair, provided at the resolution of the DTM, as a Cloud Optimized GeoTIFF (COG)
+- LOLA comma separated value (CSV) file with latitude, longitude, and radius (meters) that was used for the alignment of the point cloud to LOLA
+- An ASP generated quality assurance CSV, the output from the geo_diff tool, showing the point-by-point offsets computed, after alignment, between the ASP generated point cloud and LOLA
+- A Provenance file that tracks the processing done during the creation of the product
+
+### Available Assets v2.0
+- JPEG thumbnail browse image generated from the DTM hillshade
+- Digital Terrain Model (DTM) with units in meters reporting height above the sphere (note that these DTMs are not geoid adjusted), as a Cloud Optimized GeoTIFF (COG)
+- ASP derived point cloud in body-centered, body-fixed (BCBF) coordiantes as a compressed LAZ file
+- Hillshade, as a Cloud Optimized GeoTIFF (COG)
+- An ASP generated intersection error raster showing the triangulation error in the point cloud, as a Cloud Optimized GeoTIFF (COG)
+- Two orthoimages (left/right) provided at the input image resolution using the derived DTM, as a Cloud Optimized GeoTIFF (COG)
 - LOLA comma separated value (CSV) file with latitude, longitude, and radius (meters) that was used for the alignment of the point cloud to LOLA
 - An ASP generated quality assurance CSV, the output from the geo_diff tool, showing the point-by-point offsets computed, after alignment, between the ASP generated point cloud and LOLA
 - A Provenance file that tracks the processing done during the creation of the product
@@ -85,9 +103,10 @@ Next, long baseline errors in DTMs with seemingly good absolute alignment to LOL
 
 Third, when correcting for the sensor model intrinsics, we identified jitter in the spacecraft ephemerides. Jitter in the spacecraft position manifests as washboarding in the derived DTM. We see this jitter numerically in the intersection error rasters but do not see widespread washboarding like one finds in many MRO CTX DTMs. Still, users are cautioned to visualize the intersection error raster, checking for across-track linear trends, and then assessing the impact (or lack thereof) of the jitter on their analysis.
 
- {{< figure src="/images/data/moon/kaguyatc_dtms/jitter.png" alt="Jitter in intersection error rasters generated by ASP." caption="ASP generated intersection error rasters showing jitter (red; higher error) in multiple Kaguya TC stereopairs after triangulation. Input data have used our updated sensor model intrinsics and have been bundle adjusted prior to stereo extraction.">}}
+!!! note
+    For version 2.0 of these data, the sensor re-estimation has significantly improved what we previously identified as spacecraft jitter. Users are still cautioned to examine DTMs for use relative to their science and/or engineering goals.
 
-Fourth, two systematic errors still exist in these version 1.0 DTMs. The evening captured observations, with a full swath width (4096 pixels), still contain a systematic offset to LOLA at the DTM center. We are working to correct that error now. Second, the DTMs contain jitter, which is hard to detect in the hillshades and orthoimages, but easily visible in the intersection error rasters. Again, we are working on correcting this in an upcoming version 1.1 release.
+ {{< figure src="/images/data/moon/kaguyatc_dtms/jitter.png" alt="Jitter in intersection error rasters generated by ASP." caption="ASP generated intersection error rasters showing jitter (red; higher error) in multiple Kaguya TC stereopairs after triangulation. Input data have used our updated sensor model intrinsics and have been bundle adjusted prior to stereo extraction.">}}
 
 Finally, one should compare the DTM to the provided orthoimage and, if so inclined, to the at-resolution [Kaguya TC](kaguyatc.md) observations](kaguyatc.md) to identify and detect blunders. It is likely that the larger the spatial scale (smaller the region of interest) the more impactful small blunders that are detectable in the visible observations can be.
 
@@ -97,7 +116,12 @@ Two analysis-ready data sets are available that directly relate to these DTMs. F
 ### Cite these data
 These data are released under the [CC0-1.0 license](https://creativecommons.org/publicdomain/zero/1.0/), meaning you can copy, modify, and distribution these data without permissions. We ask that you cite these data if you make use of them. The citation to be used is:
 
+#### Version 1.0
 > Laura, J.R., Alexandrov, O., Adoram-Kershner, L., Bauck, K., Wheeler, B., Hare, T.M. 2024. Kaguya Terrain Camera, USGS Processed DTMs Analysis Ready Data Release. [https://doi.org/10.5066/P13D7VMG](https://doi.org/10.5066/P13D7VMG)
+
+
+#### Verion 2.0
+> Laura, J.R. 2026. Kaguya Terrain Camera, USGS Processed DTMs Version 2.0, Analysis Ready Data Release [https://doi:10.5066/P16KFCUX](https//:doi:10.5066/P16KFCUX)
 
 Please also consider citing the source data, provided by JAXA via [DARTS](https://darts.isas.jaxa.jp).
 
