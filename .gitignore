@@ -5,3 +5,4 @@ resources/_gen/*
 build/*
 .DS_Store
 */.DS_Store
+.vscode
