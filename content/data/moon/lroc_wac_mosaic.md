@@ -71,10 +71,9 @@ There are no companion error products. Known issues:
 - The global mosaic spans the full sphere in equirectangular projection with a central meridian of 180 degrees; longitudes run -180 to 180 in the STAC metadata.
 
 ### Related Data
-- [Barker et al. LOLA South Polar DTMs](barker_lola_dtms.md) — 5 m/pixel DTMs of 27 south polar sites
+- [LOLA](lola.md) — the Lunar Orbiter Laser Altimeter spot observations; the polar basemap tiles are registered to the LOLA shape model (80–90° N/S)
 - [Kaguya Terrain Camera](kaguyatc.md)
 - [Kaguya TC DTMs](kaguyatc_dtms.md)
-- [LOLA](lola.md)
 
 ### Cite these data
 These data are released under the [Public Domain Dedication and License 1.0 (PDDL-1.0)](https://opendata.usgs.gov/pddl-license). We ask that you cite these data if you make use of them. The citation to be used is:
